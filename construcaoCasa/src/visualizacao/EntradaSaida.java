@@ -7,27 +7,27 @@ public class EntradaSaida {
 	
 	public static int solicitaOpcao() {
 		
-		String[] opcoes = {"Consutrir casa" , "Movimentar portas ou Janelas", "Ver informações da casa", "Sair do programa"};
+		String[] opcoes = {"Consutrir casa" , "Movimentar portas ou Janelas", "Ver informaÃ§Ãµes da casa", "Sair do programa"};
 		
 		JComboBox<String> menu = new JComboBox<String>(opcoes);
 		
-		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opÃ§Ã£o desejada", JOptionPane.OK_CANCEL_OPTION);
 		
 		return menu.getSelectedIndex();
 	}
 	
 	public static void exibeMsgEncerraPrograma() {
-		JOptionPane.showMessageDialog(null, "O programa será encerrado");
+		JOptionPane.showMessageDialog(null, "O programa serÃ¡ encerrado");
 	}
 	
 	
 	public static String solicitaDescricao(String descricao, int ordem) {
 		
 		if (ordem == 0 ) {
-			return JOptionPane.showInputDialog("Informe a descrição da "+descricao);
+			return JOptionPane.showInputDialog("Informe a descriÃ§Ã£o da "+descricao);
 	
 		}else {
-			return JOptionPane.showInputDialog("Informe a descrição da "+ordem+ " "+descricao);
+			return JOptionPane.showInputDialog("Informe a descriÃ§Ã£o da "+ordem+ " "+descricao);
 		}
 	}
 	

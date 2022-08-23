@@ -46,16 +46,16 @@ public class Controladora {
 				
 				this.casa.constroiCasa(descricao, cor, listaDePortas, listaDeJanelas);
 				
-				System.out.println("Descição da casa: "+ casa.getDescricao()+"\n");
+				System.out.println("DesciÃ§Ã£o da casa: "+ casa.getDescricao()+"\n");
 				System.out.println("Cor da casa: "+ casa.getCor()+"\n");
 				
 				for(Aberturas porta: casa.getListaDePortas()) {
-					System.out.println("Descrição da porta: "+ porta.getDescricao()+"\n");
+					System.out.println("DescriÃ§Ã£o da porta: "+ porta.getDescricao()+"\n");
 					System.out.println("Estado da Porta: "   + porta.getEstado()+"\n");
 				}
 				
 				for(Aberturas janela: casa.getListaDeJanelas()) {
-					System.out.println("Descrição da janela: "+ janela.getDescricao()+"\n");
+					System.out.println("DescriÃ§Ã£o da janela: "+ janela.getDescricao()+"\n");
 					System.out.println("Estado da janela: "+ janela.getEstado()+"\n");					
 				}
 			break;
@@ -65,7 +65,7 @@ public class Controladora {
 			break;
 			
 			case 2:
-				JOptionPane.showMessageDialog(null, "Ver Informações da casa");
+				JOptionPane.showMessageDialog(null, "Ver InformaÃ§Ãµes da casa");
 			break;
 			
 			}

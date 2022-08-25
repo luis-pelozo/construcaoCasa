@@ -47,4 +47,10 @@ public class EntradaSaida {
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[1]);
 		}
 
+		public static String solicitaTipoAbertura(){
+			String opcoes[] = {"Porta", "Janela"};
+
+			return "sim";
+		}
+
 }

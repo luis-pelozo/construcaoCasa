@@ -61,7 +61,9 @@ public class Controladora {
 			break;
 			
 			case 1:
-				JOptionPane.showMessageDialog(null, "Movimentar Portas ou Janelas");
+
+				String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
+				//JOptionPane.showMessageDialog(null, "Movimentar Portas ou Janelas");
 			break;
 			
 			case 2:

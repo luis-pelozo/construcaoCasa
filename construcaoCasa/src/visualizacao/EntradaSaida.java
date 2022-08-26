@@ -1,7 +1,11 @@
 package visualizacao;
 
+import java.util.ArrayList;
+
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+
+import modelo.Aberturas;
 
 public class EntradaSaida {
 	
@@ -45,12 +49,42 @@ public class EntradaSaida {
 		return JOptionPane.showOptionDialog(null, "Informe o estado da " +tipoAbertura,
 				"Estado", 
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[1]);
+	}
+
+	public static String solicitaTipoAbertura(){
+		String opcoes[] = {"Porta", "Janela"};
+
+		int tipoAbertura = JOptionPane.showOptionDialog(null, "Informe qual tipo de abertura deseja mover", "Mover abertura", 
+			JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
+
+		if(tipoAbertura == 0){
+			return "porta";
+		}else {
+			return "janela";
+		}
+	}
+
+	public static int solicitaAberturaMover(ArrayList<Aberturas> listaAberturas) {
+		String tipoAbertura = listaAberturas.get(0).getClass().getName();
+		tipoAbertura = tipoAbertura.replaceAll("Modelo", "");
+		int qtdeAbertura = listaAberturas.size();
+		String[] descricoesAberturas = new String [qtdeAbertura];
+
+		for (int i=0; i<qtdeAbertura; i++){
+			descricoesAberturas[i] = listaAberturas.get(i).getDescricao();
 		}
 
-		public static String solicitaTipoAbertura(){
-			String opcoes[] = {"Porta", "Janela"};
+		String msg = "Escolha a "+ tipoAbertura+ " a ser movimentada";
+		JComboBox exibicaoAberturas = new JComboBox(descricoesAberturas);
+		int confirmacao = JOptionPane.showConfirmDialog(null, exibicaoAberturas, msg, JOptionPane.OK_CANCEL_OPTION);
 
-			return "sim";
-		}
+		if(confirmacao == 0 ){
+			return exibicaoAberturas.getSelectedIndex();
+		}		
+		return -1;			
+	}
 
+	public static void	exibeMsgAbertura(){
+		JOptionPane.showMessageDialog(null, "Nenhuma abertura será movimentada");
+	}
 }

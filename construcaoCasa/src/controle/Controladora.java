@@ -2,6 +2,7 @@ package controle;
 
 import java.util.ArrayList;
 
+import javax.lang.model.util.ElementScanner14;
 import javax.swing.JOptionPane;
 import visualizacao.EntradaSaida;
 import modelo.*;
@@ -61,9 +62,29 @@ public class Controladora {
 			break;
 			
 			case 1:
-
 				String tipoAbertura = EntradaSaida.solicitaTipoAbertura();
-				//JOptionPane.showMessageDialog(null, "Movimentar Portas ou Janelas");
+
+				ArrayList<Aberturas> listaDAberturas = new ArrayList<Aberturas>();
+
+				if(tipoAbertura.equals("porta")){
+					listaDAberturas = this.casa.getListaDePortas();
+
+				}else{
+					listaDAberturas = this.casa.getListaDeJanelas();
+				}
+
+				int posicao = EntradaSaida.solicitaAberturaMover(listaDAberturas);
+				int novoEstado = 0;
+
+				if(posicao!= 1){
+					novoEstado = EntradaSaida.solicitaEstado(tipoAbertura);
+					Aberturas abertura = this.casa.retornaAbertura(posicao, tipoAbertura);
+					this.casa.moverAbertura(abertura, novoEstado);
+					System.out.println("Novo estado da "+tipoAbertura+ ": "+ abertura.getEstado());
+				
+				}else{
+					EntradaSaida.exibeMsgAbertura();
+				}
 			break;
 			
 			case 2:

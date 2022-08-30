@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
+import controle.Controladora;
 import modelo.Aberturas;
 
 public class EntradaSaida {

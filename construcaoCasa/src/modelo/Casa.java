@@ -75,8 +75,10 @@ public class Casa {
 
 		for (Aberturas abertura:this.listaDeJanelas){
 			int Estado = abertura.getEstado();
-			informacoes += abertura.getDescricao()+ " Estado: "+ abertura.getEstado()+ "\n";
-		}	
+			informacoes += abertura.getDescricao() + " Estado: " + abertura.getEstado()+"\n";
+		}
+
+	
 		return informacoes;
 	}
 

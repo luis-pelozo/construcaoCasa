@@ -88,7 +88,8 @@ public class Controladora {
 			break;
 			
 			case 2:
-				JOptionPane.showMessageDialog(null, "Ver Informações da casa");
+				String informacoes = this.casa.geraInfoCasa();
+				EntradaSaida.exibeInfoCasa(informacoes);
 			break;
 			
 			}

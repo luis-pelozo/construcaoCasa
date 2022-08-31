@@ -41,6 +41,7 @@ public class EntradaSaida {
 	}
 	
 	public static int solicitaQtdeAberturas(String abertura) {
+		
 		return Integer.parseInt( JOptionPane.showInputDialog("Informe a quantidade de "+abertura));
 	}
 	

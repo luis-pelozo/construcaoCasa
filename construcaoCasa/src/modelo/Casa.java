@@ -65,17 +65,30 @@ public class Casa {
 
 	public String geraInfoCasa(){
 		String informacoes = "Descricao: " + this.descricao + "\n Cor: "+ this.cor + "\n Lista de portas: \n"; 
-		
+		String infoEstado = "";
 		for (Aberturas abertura:this.listaDePortas){
 			int estado = abertura.getEstado();
-			informacoes += abertura.getDescricao() + " Estado: " + abertura.getEstado()+"\n";
+
+			if (estado ==0){
+				infoEstado = "Fechada";
+			}else{
+				infoEstado = "Aberta";
+			}
+			informacoes += abertura.getDescricao() + " Estado: " +  /*abertura.getEstado()*/infoEstado+"\n";
 		}
 
 		informacoes+= "\n Lista de Janelas: \n";
+		
 
 		for (Aberturas abertura:this.listaDeJanelas){
-			int Estado = abertura.getEstado();
-			informacoes += abertura.getDescricao() + " Estado: " + abertura.getEstado()+"\n";
+			int estado = abertura.getEstado();
+
+			if (estado ==0){
+				infoEstado = "Fechada";
+			}else{
+				infoEstado = "Aberta";
+			}
+			informacoes += abertura.getDescricao() + " Estado: " + /*abertura.getEstado()*/infoEstado+"\n";
 		}
 
 	
